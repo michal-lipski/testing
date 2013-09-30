@@ -1,10 +1,9 @@
 import static com.google.common.collect.Lists.*;
-import static org.fest.assertions.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fest.assertions.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.joda.time.LocalDate;
 import org.junit.Test;
 
@@ -45,7 +44,7 @@ public class SomeTets {
     class TestedUser extends User {
         @Override
         public String toString() {
-            return "User with age" + getAge();
+            return "Hero with age" + getAge();
         }
     }
 
@@ -75,6 +74,23 @@ public class SomeTets {
 
         Assertions.assertThat(users).containsExactly(youngUser);
     }
+
+
+
+    //TODO TDD I get paid for code that works not for tests
+
+    //Starting with a test mean that we need to discribe what we want to achive not how.
+
+//    4.corectness - provide that code works
+//    3.fast feedback -
+//    2.refactoring - jakis kawalek syfiastego kodu
+//    1.design - testing is hard when we write bad code
+//
+//            test have two lives
+//            - 1 when it is written
+//            - 2 - when it is run and fails
+
+
 
 //-------------------------------------------------------------------------------------------------------
     /*
@@ -116,10 +132,10 @@ public class SomeTets {
 //        Person person = persister.saveAndFlush(new Person());
 //        Person person2 = persister.saveAndFlush(new Person());
 //        Organization organization = persister.saveAndFlush(new Organization());
-//        User user = persister.saveAndFlush(new User(person, organization));
-//        User user2 = persister.saveAndFlush(new User(person2, organization));
+//        Hero user = persister.saveAndFlush(new Hero(person, organization));
+//        Hero user2 = persister.saveAndFlush(new Hero(person2, organization));
 //
-//        List<User> users = repository.findByOrganizationId(organization.getId());
+//        List<Hero> users = repository.findByOrganizationId(organization.getId());
 //
 //        assertThat(users).containsOnly(user, user2);
 //    }
@@ -127,13 +143,13 @@ public class SomeTets {
 //
 //
 //    java.lang.AssertionError: expecting:
-//    <[com.mach.msp.model.User@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
+//    <[com.mach.msp.model.Hero@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.Hero@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
 //    to contain only:
-//    <[com.mach.msp.model.User@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
+//    <[com.mach.msp.model.Hero@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.Hero@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
 //    elements not found:
-//    <[com.mach.msp.model.User@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
+//    <[com.mach.msp.model.Hero@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.Hero@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
 //    and elements not expected:
-//    <[com.mach.msp.model.User@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
+//    <[com.mach.msp.model.Hero@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.Hero@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
 //
 
 //    ------------------------------------------------------------------------------------------------------------------------
