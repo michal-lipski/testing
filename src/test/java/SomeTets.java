@@ -69,113 +69,7 @@ public class SomeTets {
 //    reports_is_winning_when_current_price_comes_from_sniper
 
 //
-//        @org.junit.Test
-//        public void should_() throws Exception {
-//            User youngUser = new User().age(20);
-//            User oldUser = new User().age(33);
-//            ArrayList<User> users = newArrayList(youngUser, oldUser);
-//            ActiveUsersService activeUsersService = new ActiveUsersService();
 //
-//            activeUsersService.getOldUsers(users);
-//
-//            Assertions.assertThat(users).containsExactly(youngUser);
-//        }
-//
-//        class TestedUser extends User {
-//            @Override
-//            public String toString() {
-//                return "User with age" + getAge();
-//            }
-//        }
-//
-//        //    not needed details in setup - builder
-//        @org.junit.Test
-//        public void extensive_fixture() throws Exception {
-//            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-//            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-//            ArrayList<User> users = newArrayList(youngUser, oldUser);
-//            ActiveUsersService activeUsersService = new ActiveUsersService();
-//
-//            activeUsersService.getOldUsers(users);
-//
-//            Assertions.assertThat(users).containsExactly(youngUser);
-//        }
-//
-//
-//        //many assertions
-//        @org.junit.Test
-//        public void assertions() throws Exception {
-//            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-//            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-//            ArrayList<User> users = newArrayList(youngUser, oldUser);
-//            ActiveUsersService activeUsersService = new ActiveUsersService();
-//
-//            activeUsersService.getOldUsers(users);
-//
-//            Assertions.assertThat(users).containsExactly(youngUser);
-//        }
-
-//-------------------------------------------------------------------------------------------------------
-    /*
-
-        Date startDate = new Date(1000);
-    Date endDate = new Date(2000);
-
-    the failure message reports that a payment date is wrong but doesn’t
-    describe
-    where the wrong value might have come from:
-
-    java.lang. AssertionError: payment date
-    Expected: <Thu Jan 01 01: 00:01 GMT 1970>
-         got: <Thu Jan 01 01: 00:02 GMT 1970>
-
-    What we really want to know is the meaning of these dates. If we force
-    the
-    display string:
-
-    Date startDate = namedDate(1000, "startDate");
-    Date endDate = namedDate(2000, "endDate") ;
-
-    Date namedDate(long timeValue, final String name) {
-        return new Date(timeValue) { public String toString( ) { return
-    name; } };
-    }
-
-    we get a message that describes the role that each date plays:
-
-    java.lang. AssertionError: payment date
-    Expected: <startDate>
-         got: <endDate>
-
-     */
-
-
-//    @Test
-//    public void find_users_by_org_id() {
-//        Person person = persister.saveAndFlush(new Person());
-//        Person person2 = persister.saveAndFlush(new Person());
-//        Organization organization = persister.saveAndFlush(new Organization());
-//        User user = persister.saveAndFlush(new User(person, organization));
-//        User user2 = persister.saveAndFlush(new User(person2, organization));
-//
-//        List<User> users = repository.findByOrganizationId(organization.getId());
-//
-//        assertThat(users).containsOnly(user, user2);
-//    }
-//
-//
-//
-//    java.lang.AssertionError: expecting:
-//    <[com.mach.msp.model.User@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
-//    to contain only:
-//    <[com.mach.msp.model.User@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
-//    elements not found:
-//    <[com.mach.msp.model.User@a67452a5 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@d6ee4297 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
-//    and elements not expected:
-//    <[com.mach.msp.model.User@851cd169 [id=2, person=Person [id=2, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d], com.mach.msp.model.User@54a2e177 [id=3, person=Person [id=3, firstName=null, lastName=null, email=null], validFrom=null, active=true, organization=com.mach.msp.model.organization.Organization@5362271d]]>
-//
-
-//    ------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -625,4 +519,18 @@ public class SomeTets {
     //====================
     //Show me a test with a lot of mocked method calls, and I’ll show you a class under test which violates the law of Demeter. And which
     //is, consequently, a liability to future code changes.
+
+
+
+
+//    The story-telling approach forces you to abstract from unimportant details, f. ex. by creating an abstraction layer between the test and the low-level details of what’s being tested (the layer may consist of something as simple as a helper method or something more elaborate)
+
+
+
+
+
+
+
+
+
 }
