@@ -2,6 +2,7 @@ package exception;
 
 import static com.googlecode.catchexception.CatchException.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -22,6 +23,7 @@ public class DepositTest {
 
         try {
             depositService.deposit(4.99);
+            fail("Exception was not thrown");
         } catch (DepositService.InvalidDepositAmountException error) {
             //expected InvalidDepositAmountException
         }
