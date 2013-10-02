@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Hero {
 
-    private String name;
+    private String alias;
     private String realFirstName;
     private String realLastName;
     private HeroOrigin origin;
     private List<String> symbols;
 
-    public String getName() {
-        return name;
+    public String getAlias() {
+        return alias;
     }
 
-    public Hero name(String name) {
-        this.name = name;
+    public Hero alias(String alias) {
+        this.alias = alias;
         return this;
     }
 
