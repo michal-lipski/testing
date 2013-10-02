@@ -1,39 +1,48 @@
 package assertions;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+
+import org.assertj.core.api.Assertions;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
+import exception.DepositService;
+
 public class AssertionsTest {
+    DepositService depositService;
+
+    @Before
+    public void setUp() throws Exception {
+        depositService = new DepositService();
+    }
 
     @Test
     public void should_use_junit() throws Exception {
-        //given
+        depositService.setMinimumDepositAmount(5.00);
 
-        //when
+        depositService.deposit(6.00);
 
-        //then
-
+        assertEquals(depositService.currentDeposit(), 6.00, 0.00);
     }
 
-//    @Test
-//    public void should_use_hamcrest() throws Exception {
-//        accountRepository = new SimpleAccountRepository();
-//        FeePolicy feePolicy = new ZeroFeePolicy();
-//        transferService = new DefaultTransferService(accountRepository, feePolicy);
-//
-//        //NO COMPLETION
-//        assertThat(accountRepository.findById(A123_ID).getBalance(), equalTo(A123_INITIAL_BAL));
-//        assertThat(accountRepository.findById(C456_ID).getBalance(), equalTo(C456_INITIAL_BAL));
-//
-//    }
+    @Test
+    public void should_use_hamcrest() throws Exception {
+        depositService.setMinimumDepositAmount(5.00);
+
+        depositService.deposit(5.00);
+
+//        Assert.assertThat(depositService.currentDeposit(), xxx(5.00));
+    }
 
     @Test
     public void should_use_assertJ() throws Exception {
-        //given
+        depositService.setMinimumDepositAmount(5.00);
 
-        //when
+        depositService.deposit(5.00);
 
-        //then
-
+//        Assertions.assertThat(depositService.currentDeposit()).xxx(5.00);
     }
 
 }

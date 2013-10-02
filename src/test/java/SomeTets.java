@@ -10,6 +10,14 @@ import org.junit.Test;
 
 public class SomeTets {
 
+
+//CO mozna powiedziec o tym tescie czy jest czytelny?
+//test have two lives
+//            - 1 when it is written
+//            - 2 - when it is run and fails
+
+
+
 //!!!!!!!!!!!!!!!!!!
     //REFACTORING IMPLEMENTATIONS WITHOUT BREAKING TESTS, AND THAT IS WHAT WE ARE LOOKING FOR IN TDD.
 
@@ -29,18 +37,18 @@ public class SomeTets {
 //    reports_is_winning_when_current_price_comes_from_sniper
 
 
-    @org.junit.Testimport static com.google.common.collect.Lists.*;
-    import static org.fest.assertions.api.Assertions.assertThat;
-
-    import java.util.ArrayList;
-    import java.util.List;
-
-    import org.fest.assertions.api.Assertions;
-    import org.joda.time.LocalDate;
-    import org.junit.Test;
-
-
-    public class SomeTets {
+//    @org.junit.Testimport static com.google.common.collect.Lists.*;
+//    import static org.fest.assertions.api.Assertions.assertThat;
+//
+//    import java.util.ArrayList;
+//    import java.util.List;
+//
+//    import org.fest.assertions.api.Assertions;
+//    import org.joda.time.LocalDate;
+//    import org.junit.Test;
+//
+//
+//    public class SomeTets {
 
 //!!!!!!!!!!!!!!!!!!
         //REFACTORING IMPLEMENTATIONS WITHOUT BREAKING TESTS, AND THAT IS WHAT WE ARE LOOKING FOR IN TDD.
@@ -60,52 +68,52 @@ public class SomeTets {
 //    bids_higher_and_reports_bidding_when_new_price_arrives
 //    reports_is_winning_when_current_price_comes_from_sniper
 
-
-        @org.junit.Test
-        public void should_() throws Exception {
-            User youngUser = new User().age(20);
-            User oldUser = new User().age(33);
-            ArrayList<User> users = newArrayList(youngUser, oldUser);
-            ActiveUsersService activeUsersService = new ActiveUsersService();
-
-            activeUsersService.getOldUsers(users);
-
-            Assertions.assertThat(users).containsExactly(youngUser);
-        }
-
-        class TestedUser extends User {
-            @Override
-            public String toString() {
-                return "User with age" + getAge();
-            }
-        }
-
-        //    not needed details in setup - builder
-        @org.junit.Test
-        public void extensive_fixture() throws Exception {
-            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-            ArrayList<User> users = newArrayList(youngUser, oldUser);
-            ActiveUsersService activeUsersService = new ActiveUsersService();
-
-            activeUsersService.getOldUsers(users);
-
-            Assertions.assertThat(users).containsExactly(youngUser);
-        }
-
-
-        //many assertions
-        @org.junit.Test
-        public void assertions() throws Exception {
-            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-            ArrayList<User> users = newArrayList(youngUser, oldUser);
-            ActiveUsersService activeUsersService = new ActiveUsersService();
-
-            activeUsersService.getOldUsers(users);
-
-            Assertions.assertThat(users).containsExactly(youngUser);
-        }
+//
+//        @org.junit.Test
+//        public void should_() throws Exception {
+//            User youngUser = new User().age(20);
+//            User oldUser = new User().age(33);
+//            ArrayList<User> users = newArrayList(youngUser, oldUser);
+//            ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//            activeUsersService.getOldUsers(users);
+//
+//            Assertions.assertThat(users).containsExactly(youngUser);
+//        }
+//
+//        class TestedUser extends User {
+//            @Override
+//            public String toString() {
+//                return "User with age" + getAge();
+//            }
+//        }
+//
+//        //    not needed details in setup - builder
+//        @org.junit.Test
+//        public void extensive_fixture() throws Exception {
+//            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
+//            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
+//            ArrayList<User> users = newArrayList(youngUser, oldUser);
+//            ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//            activeUsersService.getOldUsers(users);
+//
+//            Assertions.assertThat(users).containsExactly(youngUser);
+//        }
+//
+//
+//        //many assertions
+//        @org.junit.Test
+//        public void assertions() throws Exception {
+//            User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
+//            User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
+//            ArrayList<User> users = newArrayList(youngUser, oldUser);
+//            ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//            activeUsersService.getOldUsers(users);
+//
+//            Assertions.assertThat(users).containsExactly(youngUser);
+//        }
 
 //-------------------------------------------------------------------------------------------------------
     /*
@@ -330,52 +338,52 @@ public class SomeTets {
         //====================
         //Show me a test with a lot of mocked method calls, and I’ll show you a class under test which violates the law of Demeter. And which
         //is, consequently, a liability to future code changes.
-    }
-
-    public void should_() throws Exception {
-        User youngUser = new User().age(20);
-        User oldUser = new User().age(33);
-        ArrayList<User> users = newArrayList(youngUser, oldUser);
-        ActiveUsersService activeUsersService = new ActiveUsersService();
-
-        activeUsersService.getOldUsers(users);
-
-        Assertions.assertThat(users).containsExactly(youngUser);
-    }
-
-    class TestedUser extends User {
-        @Override
-        public String toString() {
-            return "Hero with age" + getAge();
-        }
-    }
-
-//    not needed details in setup - builder
-    @org.junit.Test
-    public void extensive_fixture() throws Exception {
-        User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-        User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-        ArrayList<User> users = newArrayList(youngUser, oldUser);
-        ActiveUsersService activeUsersService = new ActiveUsersService();
-
-        activeUsersService.getOldUsers(users);
-
-        Assertions.assertThat(users).containsExactly(youngUser);
-    }
-
-
-    //many assertions
-    @org.junit.Test
-    public void assertions() throws Exception {
-        User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
-        User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
-        ArrayList<User> users = newArrayList(youngUser, oldUser);
-        ActiveUsersService activeUsersService = new ActiveUsersService();
-
-        activeUsersService.getOldUsers(users);
-
-        Assertions.assertThat(users).containsExactly(youngUser);
-    }
+//    }
+//
+//    public void should_() throws Exception {
+//        User youngUser = new User().age(20);
+//        User oldUser = new User().age(33);
+//        ArrayList<User> users = newArrayList(youngUser, oldUser);
+//        ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//        activeUsersService.getOldUsers(users);
+//
+//        Assertions.assertThat(users).containsExactly(youngUser);
+//    }
+//
+//    class TestedUser extends User {
+//        @Override
+//        public String toString() {
+//            return "Hero with age" + getAge();
+//        }
+//    }
+//
+////    not needed details in setup - builder
+//    @org.junit.Test
+//    public void extensive_fixture() throws Exception {
+//        User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
+//        User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
+//        ArrayList<User> users = newArrayList(youngUser, oldUser);
+//        ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//        activeUsersService.getOldUsers(users);
+//
+//        Assertions.assertThat(users).containsExactly(youngUser);
+//    }
+//
+//
+//    //many assertions
+//    @org.junit.Test
+//    public void assertions() throws Exception {
+//        User youngUser = new User("John","Doe","Warsaw",23,LocalDate.now());
+//        User oldUser = new User("Bob","Doe","Warsaw",39,LocalDate.now());
+//        ArrayList<User> users = newArrayList(youngUser, oldUser);
+//        ActiveUsersService activeUsersService = new ActiveUsersService();
+//
+//        activeUsersService.getOldUsers(users);
+//
+//        Assertions.assertThat(users).containsExactly(youngUser);
+//    }
 
 
 
@@ -462,18 +470,18 @@ public class SomeTets {
     //A test that was written pass first rather than fail first. As an unfortunate side effect, the test case happens to always pass even
     //though the test should fail.
 
-
-    public void TurnOnLowTemperatureAlarmAtThreshold()
-    {
-//        environment.Temperature = WAY_TOO_COLD;
-//        controller.Tick();
-//        Assert.True(environmentalSystem.IsHeaterOn);
-//        Assert.True(environmentalSystem.IsBlowerOn);
-//        Assert.False(environmentalSystem.IsCoolerOn);
-//        Assert.False(environmentalSystem.IsHighTemperatureAlarmOn);
-//        Assert.True(environmentalSystem.IsLowTemperatureAlarmOn);
-    }
-
+//
+//    public void TurnOnLowTemperatureAlarmAtThreshold()
+//    {
+////        environment.Temperature = WAY_TOO_COLD;
+////        controller.Tick();
+////        Assert.True(environmentalSystem.IsHeaterOn);
+////        Assert.True(environmentalSystem.IsBlowerOn);
+////        Assert.False(environmentalSystem.IsCoolerOn);
+////        Assert.False(environmentalSystem.IsHighTemperatureAlarmOn);
+////        Assert.True(environmentalSystem.IsLowTemperatureAlarmOn);
+//    }
+//
 
     //Tests that verify the implementation rather than the behavior
 

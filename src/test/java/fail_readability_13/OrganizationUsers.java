@@ -11,11 +11,6 @@ public class OrganizationUsers {
 
     private HeroesRepository repository = new HeroesRepository();
 
-//CO mozna powiedziec o tym tescie czy jest czytelny?
-//test have two lives
-//            - 1 when it is written
-//            - 2 - when it is run and fails
-
     @Test
     public void find_users_by_name() {
         Hero spiderMan = repository.save(new Hero("spiderman"));
@@ -34,7 +29,8 @@ public class OrganizationUsers {
 
         List<Hero> marvellHeroes = repository.findByName("spiderman");
 
-        assertThat(marvellHeroes).containsOnly(spiderMan);
+//        assertThat(marvellHeroes).containsOnly(spiderMan);
+        assertThat(marvellHeroes).contains(spiderMan).doesNotContain(superMan);
     }
 
     private Hero namedHero(final String name) {
