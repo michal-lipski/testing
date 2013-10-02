@@ -37,5 +37,4 @@ public class Hero {
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
-
 }

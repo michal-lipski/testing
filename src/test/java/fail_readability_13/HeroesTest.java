@@ -6,8 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class OrganizationUsers {
-
+public class HeroesTest {
 
     private HeroesRepository repository = new HeroesRepository();
 
@@ -18,9 +17,8 @@ public class OrganizationUsers {
 
         List<Hero> marvellHeroes = repository.findByName("spiderman");
 
-        assertThat(marvellHeroes).containsOnly(spiderMan);
+        assertThat(marvellHeroes).contains(spiderMan).doesNotContain(superMan);
     }
-
 
     @Test
     public void find_users_by_name_better() {
