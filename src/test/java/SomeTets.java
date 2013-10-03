@@ -209,7 +209,9 @@ public class SomeTets {
 
 
 
-        //--This topic has always interested me because its a fundamental choice. You either do what you describe here and use refactoring as a key design tool, or start using unit testing to drive deeper and deeper into your design. Both approaches have their advantages.
+        //--This topic has always interested me because its a fundamental choice. You either do what you describe here
+        // and use refactoring as a key design tool, or start using unit testing to drive deeper and deeper into
+        // your design. Both approaches have their advantages.
 
 
         //classical TDD instead of mockist approach
