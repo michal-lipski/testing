@@ -13,6 +13,7 @@ public class Hero {
     public int numberOfFightsWon;
     private int power;
     private String weapon;
+    private int health;
 
     public String getAlias() {
         return alias;
@@ -81,5 +82,20 @@ public class Hero {
     public Hero weapon(String weapon) {
         this.weapon = weapon;
         return this;
+    }
+
+    public void inflictDamage(int damage) {
+        if (damage > 5) {
+            health--;
+        }
+    }
+
+    public Hero health(int health) {
+        this.health = health;
+        return this;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }

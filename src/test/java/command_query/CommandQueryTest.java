@@ -28,20 +28,41 @@ public class CommandQueryTest {
 
          assertThat(objetosc).isEqualTo(40);
      }
+
+//    @Test
+//    public void test_objetosc2(){
+//        Walec walec = new Walec(5,2);
+//        when(kolo.pole()).thenReturn(10);
+//
+//        int objetosc = walec.objetosc();
+//
+//        assertThat(objetosc).isEqualTo(40);
+//    }
+
+//    @Test
+//    public void test_objetosc2(){
+//        Walec walec = new Walec(5,2);
+//
+//        int objetosc = walec.objetosc();
+//
+//        verify(kolo).getPodstawa();
+//
+//    }
+
      //dont test internals - private method
 
     //dont test internals - verify that podstawa was called
     //dont test internals - mock podstawa
-    @Test
-    public void test_objetosc2(){
-        Walec walec = new Walec(5,2);
-       // when(podstawa.).
-
-
-        int objetosc = walec.objetosc();
-
-        assertThat(objetosc).isEqualTo(40);
-    }
+//    @Test
+//    public void test_objetosc2(){
+//        Walec walec = new Walec(5,2);
+//       // when(podstawa.).
+//
+//
+//        int objetosc = walec.objetosc();
+//
+//        assertThat(objetosc).isEqualTo(40);
+//    }
 
 
 
