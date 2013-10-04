@@ -43,17 +43,8 @@ public class MjollnirPowerTest {
         //verify(loki).inflictDamage(111300);
     }
 
-    //pokazac ze jak zmieni sie implementacja inflictDamage to zacznie nam padac ten test!!!
-    @Test
-    public void smite_opponent_inflicting_damage_on_oponent(){
-        Mjollnir mjollnir = new Mjollnir(30, 50, 100);
-        Hero loki = new Hero().health(5);
 
-        mjollnir.smite(loki);
-
-        assertThat(loki.getHealth()).isEqualTo(4);
-    }
-
+//------BAD
 
     @Test
     public void should_call_head_weight_when_calculating_mjollnir_power() {
@@ -96,8 +87,19 @@ public class MjollnirPowerTest {
 
         verify(mjollnir.head).density(anyDouble());
     }
-}
 
+    //pokazac ze jak zmieni sie implementacja inflictDamage to zacznie nam padac ten test!!!
+    @Test
+    public void smite_opponent_inflicting_damage_on_oponent(){
+        Mjollnir mjollnir = new Mjollnir(30, 50, 100);
+        Hero loki = new Hero().health(5);
+
+        mjollnir.smite(loki);
+
+        assertThat(loki.getHealth()).isEqualTo(4);
+    }
+
+}
 
 class Mjollnir {
 
@@ -110,7 +112,6 @@ class Mjollnir {
     }
 
     public Mjollnir() {
-
     }
 
     public int getPower() {
