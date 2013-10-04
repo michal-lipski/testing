@@ -10,29 +10,30 @@ public class HeroesTest {
 
     private HeroesRepository repository = new HeroesRepository();
 
+    //TODO move to real Hero
     @Test
     public void find_users_by_name() {
-        Hero spiderMan = repository.save(new Hero("spiderman"));
-        Hero superMan = repository.save(new Hero( "superman"));
+        Hero spiderman = repository.save(new Hero("Spiderman"));
+        Hero superman = repository.save(new Hero("Superman"));
 
-        List<Hero> marvellHeroes = repository.findByName("spiderman");
+        List<Hero> heroes = repository.findByName("Spiderman");
 
-        assertThat(marvellHeroes).contains(spiderMan).doesNotContain(superMan);
+        assertThat(heroes).contains(spiderman).doesNotContain(superman);
     }
 
     @Test
     public void find_users_by_name_better() {
-        Hero spiderMan = repository.save(namedHero("spiderman"));
-        Hero superMan = repository.save(namedHero( "superman"));
+        Hero spiderman = repository.save(namedHero("spiderman"));
+        Hero superman = repository.save(namedHero("superman"));
 
         List<Hero> marvellHeroes = repository.findByName("spiderman");
 
-//        assertThat(marvellHeroes).containsOnly(spiderMan);
-        assertThat(marvellHeroes).contains(spiderMan).doesNotContain(superMan);
+//        assertThat(marvellHeroes).containsOnly(spiderman);
+        assertThat(marvellHeroes).contains(spiderman).doesNotContain(superman);
     }
 
     private Hero namedHero(final String name) {
-        return new Hero(name){
+        return new Hero(name) {
             @Override
             public String toString() {
                 return name;
@@ -40,4 +41,14 @@ public class HeroesTest {
         };
     }
 
+    @Test
+    public void find_users_by_name_overriding_error_message() {
+        Hero spiderman = repository.save(new Hero("Spiderman"));
+        Hero superman = repository.save(new Hero("Superman"));
+
+        List<Hero> heroes = repository.findByName("Spiderman");
+
+        assertThat(heroes).overridingErrorMessage("Expecting Marvell heroes to contain %s only", spiderman.getName()).contains(spiderman)
+                .doesNotContain(superman);
+    }
 }

@@ -37,4 +37,8 @@ public class Hero {
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
+
+    public String getName() {
+        return name;
+    }
 }
