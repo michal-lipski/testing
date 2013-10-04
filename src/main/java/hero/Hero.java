@@ -66,7 +66,11 @@ public class Hero {
     }
 
     public boolean fight(Hero opponent) {
-        return this.power > opponent.power;
+        boolean won = this.power > opponent.power;
+        if (won) {
+            numberOfFightsWon++;
+        }
+        return won;
     }
 
     public boolean fight(Hero opponent, Map<String, String> fightContext) {

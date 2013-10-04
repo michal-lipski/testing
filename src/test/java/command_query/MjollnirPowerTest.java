@@ -23,7 +23,6 @@ public class MjollnirPowerTest {
         //assertThat(mjollnirPower).isEqualTo(111300);
     }
 
-
     @Test
     public void power_changed_when_different_head_material_is_used() {
         Mjollnir mjollnir = new Mjollnir(30, 50, 100);
@@ -31,16 +30,6 @@ public class MjollnirPowerTest {
         mjollnir.changeHeadMaterial(GOLD_DENSITY);
 
         //assertThat(mjollnir.getPower()).isEqualTo(272800);
-    }
-
-    @Test
-    public void smite_opponent_inflicting_damage_equal_to_power(){
-        Mjollnir mjollnir = new Mjollnir(30, 50, 100);
-        Hero loki = mock(Hero.class);
-
-        mjollnir.smite(loki);
-
-        //verify(loki).inflictDamage(111300);
     }
 
 
@@ -86,6 +75,18 @@ public class MjollnirPowerTest {
         mjollnir.changeHeadMaterial(GOLD_DENSITY);
 
         verify(mjollnir.head).density(anyDouble());
+    }
+
+    //COLABORATORS
+
+    @Test
+    public void smite_opponent_inflicting_damage_equal_to_power(){
+        Mjollnir mjollnir = new Mjollnir(30, 50, 100);
+        Hero loki = mock(Hero.class);
+
+        mjollnir.smite(loki);
+
+        //verify(loki).inflictDamage(111300);
     }
 
     //pokazac ze jak zmieni sie implementacja inflictDamage to zacznie nam padac ten test!!!
