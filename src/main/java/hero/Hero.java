@@ -9,6 +9,8 @@ public class Hero {
     private String realLastName;
     private HeroOrigin origin;
     private List<String> symbols;
+    public int numberOfFightsWon;
+    private int power;
 
     public String getAlias() {
         return alias;
@@ -55,4 +57,12 @@ public class Hero {
         return this;
     }
 
+    public Hero power(int power) {
+        this.power = power;
+        return this;
+    }
+
+    public boolean fight(Hero oponent) {
+        return this.power > oponent.power;
+    }
 }

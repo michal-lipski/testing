@@ -1,0 +1,32 @@
+package given_when_then;
+
+import static com.google.common.collect.Lists.newArrayList;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import hero.Hero;
+
+@RunWith(MockitoJUnitRunner.class)
+public class GivenWhenThenTest {
+
+    @Test
+    public void should_win_fight_and_increase_number_of_fights_won() throws Exception {
+        //given
+        Hero superman = new Hero().alias("Superman").power(5).symbols(newArrayList("blue suit", "red cape"));
+        Hero lexLuthor = new Hero().realFirstName("Lex").realLastName("Luthor").power(4).symbols(newArrayList("bald head", "cigar"));
+        assertThat(superman.numberOfFightsWon).isEqualTo(0);
+        assertThat(lexLuthor.numberOfFightsWon).isEqualTo(0);
+
+        //when
+        boolean supermanWon = superman.fight(lexLuthor);
+
+        //then
+        assertThat(supermanWon).isTrue();
+        assertThat(superman.numberOfFightsWon).isEqualTo(1);
+        assertThat(lexLuthor.numberOfFightsWon).isEqualTo(0);
+    }
+
+}

@@ -35,7 +35,7 @@ public class CommandQueryTest {
     @Test
     public void test_objetosc2(){
         Walec walec = new Walec(5,2);
-        when(podstawa.).
+       // when(podstawa.).
 
 
         int objetosc = walec.objetosc();
