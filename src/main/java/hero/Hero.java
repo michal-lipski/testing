@@ -1,6 +1,7 @@
 package hero;
 
 import java.util.List;
+import java.util.Map;
 
 public class Hero {
 
@@ -11,6 +12,7 @@ public class Hero {
     private List<String> symbols;
     public int numberOfFightsWon;
     private int power;
+    private String weapon;
 
     public String getAlias() {
         return alias;
@@ -62,7 +64,22 @@ public class Hero {
         return this;
     }
 
-    public boolean fight(Hero oponent) {
-        return this.power > oponent.power;
+    public boolean fight(Hero opponent) {
+        return this.power > opponent.power;
+    }
+
+    public boolean fight(Hero opponent, Map<String, String> fightContext) {
+        if ("Superman".equals(this.alias) && "kryptonite".equals(opponent.weapon)) {
+            return false;
+        }
+        if (this.power == opponent.power) {
+            return "day".equals(fightContext.get("timeOfDay"));
+        }
+        return this.power > opponent.power;
+    }
+
+    public Hero weapon(String weapon) {
+        this.weapon = weapon;
+        return this;
     }
 }
