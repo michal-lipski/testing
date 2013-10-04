@@ -2,6 +2,8 @@ package hero;
 
 import static com.google.common.collect.Lists.*;
 
+import java.util.List;
+
 public class HeroService {
 
     public Hero getHero(int id) {
@@ -9,4 +11,7 @@ public class HeroService {
                 .symbols(newArrayList("blue costume", "red cape", "S-shield"));
     }
 
+    public List<Hero> findByAliasPrefix(String s) {
+        return newArrayList();
+    }
 }
