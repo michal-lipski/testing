@@ -22,8 +22,12 @@ public class HeroRepository {
         return hero;
     }
 
-    public List<Hero> findByName(String name) {
-        return filter(having(on(Hero.class).getAlias(), equalTo(name)), heroes);
+    public List<Hero> findAllByAlias(String alias) {
+        return filter(having(on(Hero.class).getAlias(), equalTo(alias)), heroes);
         //return heroes;
+    }
+
+    public Hero findByAlias(String alias) {
+        return null;
     }
 }

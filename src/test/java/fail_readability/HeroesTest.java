@@ -17,7 +17,7 @@ public class HeroesTest {
         Hero spiderman = repository.save(new Hero().alias("Spiderman"));
         Hero superman = repository.save(new Hero().alias("Superman"));
 
-        List<Hero> heroes = repository.findByName("Spiderman");
+        List<Hero> heroes = repository.findAllByAlias("Spiderman");
 
         assertThat(heroes).contains(spiderman).doesNotContain(superman);
     }
@@ -27,7 +27,7 @@ public class HeroesTest {
         Hero spiderman = repository.save(namedHero().alias("Spiderman"));
         Hero superman = repository.save(namedHero().alias("Superman"));
 
-        List<Hero> heroes = repository.findByName("Spiderman");
+        List<Hero> heroes = repository.findAllByAlias("Spiderman");
 
 //        assertThat(heroes).containsOnly(spiderman);
         assertThat(heroes).contains(spiderman).doesNotContain(superman);
@@ -47,7 +47,7 @@ public class HeroesTest {
         Hero spiderman = repository.save(new Hero().alias("Spiderman"));
         Hero superman = repository.save(new Hero().alias("Superman"));
 
-        List<Hero> heroes = repository.findByName("Spiderman");
+        List<Hero> heroes = repository.findAllByAlias("Spiderman");
 
         assertThat(heroes).overridingErrorMessage("Expecting heroes to contain %s only when searching for 'Spiderman'",
                 spiderman.getAlias()).contains(spiderman).doesNotContain(superman);

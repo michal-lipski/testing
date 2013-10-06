@@ -17,6 +17,7 @@ public class Hero {
     private int power;
     private String weapon;
     private int health = 1;
+    private String organization;
 
     public String getAlias() {
         return alias;
@@ -127,6 +128,15 @@ public class Hero {
 
     public String sayHello() {
         return "Hello from " + getAlias();
+    }
+
+    public Hero organization(String organization) {
+        this.organization = organization;
+        return this;
+    }
+
+    public boolean isFromOrganization(String organization) {
+        return this.organization.equals(organization);
     }
 
     public class DeadException extends RuntimeException {
