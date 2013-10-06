@@ -1,5 +1,8 @@
 package hero;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +16,7 @@ public class Hero {
     public int numberOfFightsWon;
     private int power;
     private String weapon;
-    private int health;
+    private int health = 1;
 
     public String getAlias() {
         return alias;
@@ -66,6 +69,9 @@ public class Hero {
     }
 
     public boolean fight(Hero opponent) {
+        if(health == 0 ){
+            throw new DeadException();
+        }
         boolean won = this.power > opponent.power;
         if (won) {
             numberOfFightsWon++;
@@ -101,5 +107,28 @@ public class Hero {
 
     public int getHealth() {
         return health;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " [alias=" + alias + ", realFirstName=" + realFirstName + ", realLastName=" + realLastName + ", power=" + power
+                + ", health=" + health + ", symbols=" + symbols+"]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return EqualsBuilder.reflectionEquals(this, obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    public String sayHello() {
+        return "Hello from " + getAlias();
+    }
+
+    public class DeadException extends RuntimeException {
     }
 }
