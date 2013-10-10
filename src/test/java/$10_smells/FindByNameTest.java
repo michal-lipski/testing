@@ -1,4 +1,4 @@
-package negative_cases_only;
+package $10_smells;
 
 import static com.google.common.collect.Lists.*;
 import static org.assertj.core.api.Assertions.*;

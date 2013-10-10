@@ -1,7 +1,9 @@
-package data_setup;
+package $7_data_setup;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
+
+import data_setup.HeroRowMapper;
 import hero.Hero;
 import hero.HeroOrigin;
 

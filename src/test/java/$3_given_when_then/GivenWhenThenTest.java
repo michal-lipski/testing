@@ -1,11 +1,9 @@
-package given_when_then;
+package $3_given_when_then;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import hero.Hero;
 
@@ -16,7 +14,7 @@ public class GivenWhenThenTest {
         //given
         Hero superman = new Hero().alias("Superman").power(5).symbols(newArrayList("blue suit", "red cape"));
         Hero lexLuthor = new Hero().realFirstName("Lex").realLastName("Luthor").power(4)
-                .symbols(newArrayList("bald head","cigar")).health(10);
+                .symbols(newArrayList("bald head", "cigar")).health(10);
         assertThat(superman.numberOfFightsWon).isEqualTo(0);
         assertThat(lexLuthor.numberOfFightsWon).isEqualTo(0);
 

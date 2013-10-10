@@ -1,6 +1,8 @@
-package data_setup;
+package $7_data_setup;
 
 import static org.assertj.core.api.Assertions.*;
+
+import data_setup.EpitaphWriter;
 import hero.Hero;
 import hero.HeroOrigin;
 

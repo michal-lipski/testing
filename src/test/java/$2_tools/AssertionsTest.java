@@ -1,4 +1,4 @@
-package assertions;
+package $2_tools;
 
 import static org.junit.Assert.*;
 

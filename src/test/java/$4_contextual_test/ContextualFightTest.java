@@ -1,18 +1,13 @@
-package contextual_test;
+package $4_contextual_test;
 
 import static com.google.common.collect.Maps.newHashMap;
-import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import com.google.common.collect.Maps;
 
 import hero.Hero;
 

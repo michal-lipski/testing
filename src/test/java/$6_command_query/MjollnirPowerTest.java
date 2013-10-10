@@ -1,4 +1,4 @@
-package command_query;
+package $6_command_query;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -20,7 +20,7 @@ public class MjollnirPowerTest {
 
         int mjollnirPower = mjollnir.getPower();
 
-        //assertThat(mjollnirPower).isEqualTo(111300);
+        assertThat(mjollnirPower).isEqualTo(111300);
     }
 
     @Test
@@ -29,12 +29,10 @@ public class MjollnirPowerTest {
 
         mjollnir.changeHeadMaterial(GOLD_DENSITY);
 
-        //assertThat(mjollnir.getPower()).isEqualTo(272800);
+        assertThat(mjollnir.getPower()).isEqualTo(272800);
     }
 
-
 //------BAD
-
     @Test
     public void should_call_head_weight_when_calculating_mjollnir_power() {
         Mjollnir mjollnir = new Mjollnir().handleLength(100);
@@ -86,10 +84,9 @@ public class MjollnirPowerTest {
 
         mjollnir.smite(loki);
 
-        //verify(loki).inflictDamage(111300);
+        verify(loki).inflictDamage(111300);
     }
 
-    //pokazac ze jak zmieni sie implementacja inflictDamage to zacznie nam padac ten test!!!
     @Test
     public void smite_opponent_inflicting_damage_on_oponent(){
         Mjollnir mjollnir = new Mjollnir(30, 50, 100);

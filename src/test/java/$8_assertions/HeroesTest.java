@@ -1,4 +1,4 @@
-package fail_readability;
+package $8_assertions;
 
 import static org.assertj.core.api.Assertions.*;
 

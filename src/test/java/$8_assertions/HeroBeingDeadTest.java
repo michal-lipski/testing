@@ -1,15 +1,15 @@
-package exception;
+package $8_assertions;
 
 import static com.googlecode.catchexception.CatchException.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.fail;
 
 import hero.Hero;
-import org.junit.Before;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class HeroBeingDeathTest{
+public class HeroBeingDeadTest {
 
     @Test
     public void hero_cannot_fight_when_is_dead() throws Exception {

@@ -1,4 +1,4 @@
-package level_of_abstraction;
+package $5_level_of_abstraction;
 
 
 import hero.Hero;
@@ -39,11 +39,8 @@ public class HeroOrganizationTest {
     @Test
     public void heroes_from_my_company_are_friends_of_mine_v2() throws Exception {
         iAmAHeroFromCompany("Marvell");
-        Hero otherMarvellHero = aHeroFromCompany("Marvell");
 
-        boolean isFriendOfMine = heroService.isFriendOfMine(otherMarvellHero);
-
-        assertThat(isFriendOfMine).isTrue();
+        assertThat(heroService.isFriendOfMine(aHeroFromCompany("Marvell"))).isTrue();
     }
 
     private Hero aHeroFromCompany(String company) {

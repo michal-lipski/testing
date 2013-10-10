@@ -1,10 +1,12 @@
-package sql;
+package $10_smells;
 
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import sql.HeroQueryBuilder;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SqlBuilderTest {

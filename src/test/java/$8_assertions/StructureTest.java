@@ -1,4 +1,4 @@
-package assertions;
+package $8_assertions;
 
 import static org.assertj.core.api.Assertions.*;
 import hero.Hero;

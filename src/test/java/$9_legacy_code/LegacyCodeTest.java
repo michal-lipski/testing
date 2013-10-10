@@ -1,4 +1,4 @@
-package legacy_code;
+package $9_legacy_code;
 
 public class LegacyCodeTest {
 

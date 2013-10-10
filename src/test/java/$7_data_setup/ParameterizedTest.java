@@ -1,7 +1,9 @@
-package data_setup;
+package $7_data_setup;
 
 import static junitparams.JUnitParamsRunner.*;
 import static org.assertj.core.api.Assertions.*;
+
+import data_setup.HeroOriginService;
 import hero.Hero;
 import hero.HeroOrigin;
 import junitparams.JUnitParamsRunner;

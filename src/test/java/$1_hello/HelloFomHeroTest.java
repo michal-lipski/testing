@@ -1,4 +1,4 @@
-package production_logic_in_test;
+package $1_hello;
 
 import static org.assertj.core.api.Assertions.*;
 
