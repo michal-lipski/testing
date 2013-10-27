@@ -1,5 +1,6 @@
 package $8_assertions;
 
+import static $8_assertions.StructureTest.HeroAssertion.assertThatHero;
 import static org.assertj.core.api.Assertions.*;
 import hero.Hero;
 import hero.HeroOrigin;
@@ -15,11 +16,45 @@ public class StructureTest {
     public void hero_has_complete_structure() {
         Hero hero = heroService.getHero(1);
 
-        assertThat(hero.getAlias()).isEqualTo("Superman");
-        assertThat(hero.getRealFirstName()).isEqualTo("Clark");
-        assertThat(hero.getRealLastName()).isEqualTo("Kent");
-        assertThat(hero.getOrigin()).isEqualTo(new HeroOrigin(87, "Krypton"));
-        assertThat(hero.getSymbols()).containsExactly("blue costume", "red cape", "S-shield");
+        assertThatHero(hero)
+                .hasAlias("Superman")
+                .isCalled("Clark", "Kent")
+                .comesFrom(new HeroOrigin(87, "Krypton"))
+                .hasSymbols("blue costume", "red cape", "S-shield");
     }
 
+
+    static class HeroAssertion {
+
+        public static HeroAssertion assertThatHero(Hero hero) {
+            return new HeroAssertion(hero);
+        }
+
+        private Hero hero;
+
+        public HeroAssertion(Hero hero) {
+            this.hero = hero;
+        }
+
+        public HeroAssertion hasAlias(String alias) {
+            assertThat(hero.getAlias()).isEqualTo(alias);
+            return this;
+        }
+
+        public HeroAssertion isCalled(String firstName, String lastName) {
+            assertThat(hero.getRealFirstName()).isEqualTo(firstName);
+            assertThat(hero.getRealLastName()).isEqualTo(lastName);
+            return this;
+        }
+
+        public HeroAssertion comesFrom(HeroOrigin origin) {
+            assertThat(hero.getOrigin()).isEqualTo(origin);
+            return this;
+        }
+
+        public HeroAssertion hasSymbols(String... symbols) {
+            assertThat(hero.getSymbols()).containsExactly(symbols);
+            return this;
+        }
+    }
 }

@@ -1,7 +1,12 @@
 package $2_tools;
 
+import static org.assertj.core.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import org.assertj.core.api.Assertions;
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
 import org.junit.Test;
 
 import hero.Hero;
@@ -23,14 +28,14 @@ public class AssertionsTest {
     public void should_use_hamcrest() {
         Hero hero = heroService.getHero(SUPERMAN_ID);
 
-//        Assert.assertThat(hero.getAlias(), xxx("Superman"));
+        Assert.assertThat(hero.getAlias(), equalTo("Superman"));
     }
 
     @Test
     public void should_use_assertJ() {
         Hero hero = heroService.getHero(SUPERMAN_ID);
 
-//        Assertions.assertThat(hero.getAlias()).xxx("Superman");
+        assertThat(hero.getAlias()).isEqualTo("Superman");
     }
 
 }

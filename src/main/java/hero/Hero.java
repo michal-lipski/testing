@@ -23,6 +23,9 @@ public class Hero {
         return alias;
     }
 
+    public Hero() {
+    }
+
     public Hero alias(String alias) {
         this.alias = alias;
         return this;

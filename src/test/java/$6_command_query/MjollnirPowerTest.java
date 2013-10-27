@@ -3,6 +3,7 @@ package $6_command_query;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import hero.HeroBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -80,17 +81,17 @@ public class MjollnirPowerTest {
     @Test
     public void smite_opponent_inflicting_damage_equal_to_power(){
         Mjollnir mjollnir = new Mjollnir(30, 50, 100);
-        Hero loki = mock(Hero.class);
+        Hero someHero = mock(Hero.class);
 
-        mjollnir.smite(loki);
+        mjollnir.smite(someHero);
 
-        verify(loki).inflictDamage(111300);
+        verify(someHero).inflictDamage(111300);
     }
 
     @Test
     public void smite_opponent_inflicting_damage_on_oponent(){
         Mjollnir mjollnir = new Mjollnir(30, 50, 100);
-        Hero loki = new Hero().health(5);
+        Hero loki = new HeroBuilder().createHero().health(5);
 
         mjollnir.smite(loki);
 

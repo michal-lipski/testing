@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import data_setup.HeroOriginService;
 import hero.Hero;
+import hero.HeroBuilder;
 import hero.HeroOrigin;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -36,8 +37,8 @@ public class ParameterizedTest {
 
     public Object[] heros() {
         return $(
-                $(new Hero().alias("Superman"), new HeroOrigin(3, "Krypton")),
-                $(new Hero().alias("Batman"), new HeroOrigin(4, "Gotham City")));
+                $(new HeroBuilder().createHero().alias("Superman"), new HeroOrigin(3, "Krypton")),
+                $(new HeroBuilder().createHero().alias("Batman"), new HeroOrigin(4, "Gotham City")));
     }
 
 }

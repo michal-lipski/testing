@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 
 import hero.Hero;
+import hero.HeroBuilder;
 import hero.HeroRepository;
 import org.junit.Test;
 

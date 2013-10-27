@@ -1,10 +1,7 @@
 package $5_level_of_abstraction;
 
 
-import hero.Hero;
-import hero.HeroContext;
-import hero.HeroRepository;
-import hero.HeroService;
+import hero.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -27,7 +24,7 @@ public class HeroOrganizationTest {
 
     @Test
     public void heroes_from_my_company_are_friends_of_mine() {
-        Hero hero = new Hero().alias("Batman").organization("Marvell");
+        Hero hero = new HeroBuilder().createHero().alias("Batman").organization("Marvell");
         when(heroRepository.findByAlias("Batman")).thenReturn(hero);
         when(heroContext.getCurrentHeroOrganization()).thenReturn("Marvell");
 
@@ -44,7 +41,7 @@ public class HeroOrganizationTest {
     }
 
     private Hero aHeroFromCompany(String company) {
-        Hero hero = new Hero().alias("someHero").organization(company);
+        Hero hero = new HeroBuilder().createHero().alias("someHero").organization(company);
         when(heroRepository.findByAlias("someHero")).thenReturn(hero);
         return hero;
     }

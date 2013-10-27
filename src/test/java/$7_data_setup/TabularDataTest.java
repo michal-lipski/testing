@@ -19,11 +19,7 @@ public class TabularDataTest {
 
     @Test
     public void map_hero_with_origin() throws SQLException {
-        when(rs.getString(1)).thenReturn("Batman");
-        when(rs.getString(2)).thenReturn("Bruce");
-        when(rs.getString(3)).thenReturn("Wayne");
-        when(rs.getInt(4)).thenReturn(11);
-        when(rs.getString(5)).thenReturn("Gotham City");
+        rowIs("Batman", "Bruce", "Wayne", 11, "Gotham City");
 
         Hero hero = mapper.mapRow(rs, 0);
 
@@ -35,11 +31,7 @@ public class TabularDataTest {
 
     @Test
     public void map_hero_with_no_alias() throws SQLException {
-        when(rs.getString(1)).thenReturn(null);
-        when(rs.getString(2)).thenReturn("Sherlock");
-        when(rs.getString(3)).thenReturn("Holmes");
-        when(rs.getInt(4)).thenReturn(12);
-        when(rs.getString(5)).thenReturn("London");
+        rowIs(null, "Sherlock", "Holmes", 12, "London");
 
         Hero hero = mapper.mapRow(rs, 0);
 
@@ -47,6 +39,14 @@ public class TabularDataTest {
         assertThat(hero.getRealFirstName()).isEqualTo("Sherlock");
         assertThat(hero.getRealLastName()).isEqualTo("Holmes");
         assertThat(hero.getOrigin()).isEqualTo(new HeroOrigin(12, "London"));
+    }
+
+    private void rowIs(String alias, String firstName, String lastName, int originId, String originName) throws SQLException {
+        when(rs.getString(1)).thenReturn(alias);
+        when(rs.getString(2)).thenReturn(firstName);
+        when(rs.getString(3)).thenReturn(lastName);
+        when(rs.getInt(4)).thenReturn(originId);
+        when(rs.getString(5)).thenReturn(originName);
     }
 
 }
