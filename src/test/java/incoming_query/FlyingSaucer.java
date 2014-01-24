@@ -1,24 +1,22 @@
-package spaceship;
+package incoming_query;
 
 
 public class FlyingSaucer {
 
-    Gun gun;
+    Machinery machinery;
     int flyingSaucerPower;
-
 
     public FlyingSaucer(int flyingSaucerPower, int gunPower) {
         this.flyingSaucerPower = flyingSaucerPower;
-        gun = new Gun(gunPower);
+        machinery = new Machinery(gunPower);
     }
 
     public int getPower() {
-        return flyingSaucerPower * gun.getPower();
+        return flyingSaucerPower * machinery.getGunPower();
     }
 
     public void upgradeGun(int additionalPower) {
-        gun.upgradeGun(additionalPower);
+        machinery.upgradeGun(additionalPower);
     }
-
 
 }
