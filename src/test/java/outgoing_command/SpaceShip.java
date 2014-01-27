@@ -11,7 +11,7 @@ public class SpaceShip {
         health -= actualDamage;
     }
 
-    public int getHealth(){
+    public int getHealth() {
         return health;
     }
 }

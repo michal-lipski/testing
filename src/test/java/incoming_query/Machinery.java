@@ -14,7 +14,4 @@ public class Machinery {
         return gunPower;
     }
 
-    public void upgradeGun(int additionalPower) {
-        gunPower += additionalPower;
-    }
 }

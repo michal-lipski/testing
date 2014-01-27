@@ -16,7 +16,7 @@ public class FlyingSaucer {
     }
 
     public void upgradeGun(int additionalPower) {
-        gunPower +=additionalPower;
+        gunPower += additionalPower;
     }
 
 }

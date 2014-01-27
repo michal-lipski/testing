@@ -15,8 +15,4 @@ public class FlyingSaucer {
         return flyingSaucerPower * machinery.getGunPower();
     }
 
-    public void upgradeGun(int additionalPower) {
-        machinery.upgradeGun(additionalPower);
-    }
-
 }

@@ -4,7 +4,7 @@ package outgoing_command;
 public class FlyingSaucer {
 
     int flyingSaucerPower;
-    private int gunPower;
+    int gunPower;
 
     public FlyingSaucer(int flyingSaucerPower, int gunPower) {
         this.flyingSaucerPower = flyingSaucerPower;

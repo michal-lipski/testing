@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
+//QUERY METHODS
 public class FlyingSaucerTest {
-    //QUERY METHODS
 
     //BAD WAY
     @Test
