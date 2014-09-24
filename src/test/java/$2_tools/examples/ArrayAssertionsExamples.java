@@ -1,34 +1,19 @@
-/**
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
- * specific language governing permissions and limitations under the License.
- *
- * Copyright 2012-2014 the original author or authors.
- */
-package org.assertj.examples;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.assertj.core.util.Arrays.*;
-import static org.assertj.examples.data.Ring.*;
+package $2_tools.examples;
+
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import org.assertj.examples.data.Ring;
-import org.assertj.examples.data.TolkienCharacter;
-import org.junit.Test;
+import static $2_tools.examples.Ring.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.util.Arrays.array;
 
 /**
  * Array assertions examples.
- *
- * @author Joel Costigliola
  */
 public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
-    //    TODO mlip begginign
     @Test
     public void rings_are_not_empty() throws Exception {
         Ring[] elvesRings = array(vilya, nenya, narya);
@@ -89,21 +74,19 @@ public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
         TolkienCharacter[] fellowshipOfTheRingArray = fellowshipOfTheRing.toArray(new TolkienCharacter[0]);
 
         //conatins "Boromir", "Gandalf", "Frodo","Legolas"
-
-    }
- @Test
-    public void fellowship_does_not_contain_orcs() {
-        TolkienCharacter[] fellowshipOfTheRingArray = fellowshipOfTheRing.toArray(new TolkienCharacter[0]);
-
-
-     //"Hobbit", "Elf", "Orc"
-
     }
 
     @Test
-    public void charSequence_subclasses_assertions_examples() {
+    public void fellowship_does_not_contain_orcs() {
+        TolkienCharacter[] fellowshipOfTheRingArray = fellowshipOfTheRing.toArray(new TolkienCharacter[0]);
+
+        //"Hobbit", "Elf", "Orc"
+    }
+
+    @Test
+    public void subclasses_assertions_examples() {
         // StringBuilder have same assertions as String
-        StringBuilder stringBuilder = new StringBuilder("Frodo");
+        String stringBuilder = new String("Frodo");
         assertThat(stringBuilder).startsWith("Fro").endsWith("do").hasSize(5);
         assertThat(stringBuilder).contains("rod").doesNotContain("fro");
         assertThat(stringBuilder).containsOnlyOnce("do");
@@ -111,7 +94,6 @@ public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
 
     @Test
     public void number_assertions_examples() throws Exception {
-
         // equals / no equals assertions
         assertThat(sam.age).isEqualTo(38);
         assertThat(frodo.age).isEqualTo(33).isNotEqualTo(sam.age);
@@ -131,9 +113,6 @@ public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
         assertThat(gandalf.age - frodo.age).isNotNegative();
         assertThat(frodo.age - sauron.age).isNotPositive();
     }
-
-//    TODO mlip end
-
 
 
 }

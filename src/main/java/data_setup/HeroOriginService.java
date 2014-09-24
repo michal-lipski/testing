@@ -12,6 +12,10 @@ public class HeroOriginService {
         if (originId == 4) {
             return new HeroOrigin(originId, "Gotham City");
         }
+
+        if (originId == 5) {
+            return new HeroOrigin(originId, "Unknown");
+        }
         return null;
     }
 

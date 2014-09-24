@@ -36,20 +36,4 @@ public class HeroOrganizationTest {
         assertThat(isFriendOfMine).isTrue();
     }
 
-    @Test
-    public void heroes_from_my_company_are_friends_of_mine_v2() throws Exception {
-        iAmAHeroFromCompany("Marvell");
-
-        assertThat(heroService.isFriendOfMine(aHeroFromCompany("Marvell"))).isTrue();
-    }
-
-    private Hero aHeroFromCompany(String company) {
-        Hero hero = new Hero().alias("someHero").organization(company);
-        when(heroRepository.findByAlias("someHero")).thenReturn(hero);
-        return hero;
-    }
-
-    private void iAmAHeroFromCompany(String company) {
-        when(heroContext.getCurrentHeroOrganization()).thenReturn(company);
-    }
 }

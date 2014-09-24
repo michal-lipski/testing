@@ -13,6 +13,15 @@ public class HelloFomHeroTest {
 
         String helloFromSuperman = superman.sayHello();
 
+        assertThat(helloFromSuperman).isEqualTo("Hello from Superman");
+    }
+
+    @Test
+    public void says_hello_with_alias_second() {
+        Hero superman = new Hero().alias("Superman");
+
+        String helloFromSuperman = superman.sayHello();
+
         assertThat(helloFromSuperman).isEqualTo("Hello from " + superman.getAlias());
     }
 
