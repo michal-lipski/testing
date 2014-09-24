@@ -24,7 +24,7 @@ public class BasicsTest {
 		foo.setBar(bar);
 		when(bar.getName()).thenReturn("foobar");
 		
-		String result = bar.getName();
+		String result = foo.getBarName();
 		
 		assertThat(result, containsString("foo"));
 	}
@@ -33,6 +33,7 @@ public class BasicsTest {
 	public void simpleVerify() {
 		Foo foo = new Foo();
 		foo.setBar(bar);
+
 		foo.getBarName();
 		
 		verify(bar).getName();

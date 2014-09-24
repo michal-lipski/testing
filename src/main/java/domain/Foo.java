@@ -1,5 +1,7 @@
 package domain;
 
+import java.io.IOException;
+
 public class Foo {
 	
 	private Bar bar;
@@ -29,4 +31,9 @@ public class Foo {
 	public void setBarName(String newName) {
 		bar.setName(newName);
 	}
+
+    public String getData() throws IOException {
+        bar.log();
+        return "Foo" + bar.getData();
+    }
 }

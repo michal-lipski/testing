@@ -24,7 +24,7 @@ public class BasicsTest {
 		foo.setBar(bar);
 		when(bar.getName()).thenReturn("foobar");
 
-		String result = bar.getName();
+		String result = foo.getBarName();
 
 		assertThat(result, containsString("foo"));
 	}
@@ -35,7 +35,7 @@ public class BasicsTest {
 		Bar bar = mock(Bar.class);
 		foo.setBar(bar);
 
-		foo.getBarName();
+        foo.getBarName();
 
 		verify(bar).getName();
 	}
