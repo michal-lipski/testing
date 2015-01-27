@@ -1,15 +1,14 @@
-package $mock.incomingCommand;
+package $mock.outgoing_query;
 
-
-public class CandyVendorMachine implements VendorMachine {
+public class PrepaidTopupStand implements PrepaidTopup {
 
     private final OrderHandler orderHandler;
 
-    private String selection = "";
-
-    public CandyVendorMachine(OrderHandler orderHandler) {
+    public PrepaidTopupStand(OrderHandler orderHandler) {
         this.orderHandler = orderHandler;
     }
+
+    private String selection = "";
 
     @Override
     public void press(Integer number) {
@@ -21,8 +20,4 @@ public class CandyVendorMachine implements VendorMachine {
         orderHandler.placeOrder(selection);
     }
 
-    @Override
-    public String getSelection() {
-        return selection;
-    }
 }

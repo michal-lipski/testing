@@ -1,6 +1,6 @@
 package $mock.incomingCommand;
 
-public interface VendorMachine {
+public interface PrepaidTopup {
 
     public void press(Integer number);
 
