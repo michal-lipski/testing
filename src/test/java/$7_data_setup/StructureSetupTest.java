@@ -14,8 +14,7 @@ public class StructureSetupTest {
 
     @Test
     public void epitaph_for_any_hero() {
-        Hero anyHero = new Hero().alias("Batman").realFirstName("anyFirstName").realLastName("anyLastName")
-                .origin(new HeroOrigin(1, "anyOrigin"));
+        Hero anyHero = new Hero("Batman", "anyFirstName", "anyLastName", new HeroOrigin(1, "anyOrigin"));
 
         String epitaph = epitaphWriter.epitaphFor(anyHero);
 
@@ -24,8 +23,7 @@ public class StructureSetupTest {
 
     @Test
     public void epitaph_for_hero_from_Germany() {
-        Hero heroFromGermany = new Hero().alias("Doctor Octopus").realFirstName("anyFirstName").realLastName("anyLastName")
-                .origin(HeroOrigin.GERMANY);
+        Hero heroFromGermany = new Hero("Doctor Octopus", "anyFirstName", "anyLastName", HeroOrigin.GERMANY);
 
         String epitaph = epitaphWriter.epitaphFor(heroFromGermany);
 
@@ -34,7 +32,7 @@ public class StructureSetupTest {
 
     @Test
     public void epitaph_for_hero_known_by_his_real_name() {
-        Hero heroWithNoAlias = new Hero().realFirstName("Sherlock").realLastName("Holmes").origin(new HeroOrigin(1, "anyOrigin"));
+        Hero heroWithNoAlias = new Hero(null, "Sherlock", "Holmes", new HeroOrigin(1, "anyOrigin"));
 
         String epitaph = epitaphWriter.epitaphFor(heroWithNoAlias);
 

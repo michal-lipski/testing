@@ -15,7 +15,7 @@ public class StructureTest {
     public void hero_has_complete_structure() {
         Hero hero = heroService.getHero(1);
 
-        assertThat(hero.getAlias()).isEqualTo("Superman");
+        assertThat(hero.getAlias()).isEqualTo("Superman2");
         assertThat(hero.getRealFirstName()).isEqualTo("Clark");
         assertThat(hero.getRealLastName()).isEqualTo("Kent");
         assertThat(hero.getOrigin()).isEqualTo(new HeroOrigin(87, "Krypton"));

@@ -19,6 +19,16 @@ public class Hero {
     private int health = 1;
     private String organization;
 
+    public Hero(String alias, String realFirstName, String realLastName, HeroOrigin origin) {
+        this.alias = alias;
+        this.realFirstName = realFirstName;
+        this.realLastName = realLastName;
+        this.origin = origin;
+    }
+
+    public Hero() {
+    }
+
     public String getAlias() {
         return alias;
     }

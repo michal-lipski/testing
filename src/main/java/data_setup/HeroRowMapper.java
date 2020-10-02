@@ -9,7 +9,6 @@ import java.sql.SQLException;
 public class HeroRowMapper {
 
     public Hero mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return new Hero().alias(rs.getString(1)).realFirstName(rs.getString(2)).realLastName(rs.getString(3))
-                .origin(new HeroOrigin(rs.getInt(4), rs.getString(5)));
+        return new Hero(rs.getString(1), rs.getString(2), rs.getString(3), new HeroOrigin(rs.getInt(4), rs.getString(5)));
     }
 }
